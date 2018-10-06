@@ -3,8 +3,8 @@ package com.waliahimanshu.demo.ui.home
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewCompat
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,10 +40,8 @@ class RecipesFragment : Fragment(), RecipesEntryContract.View, RecipeEntryAdapte
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewManager = StaggeredGridLayoutManager(1,RecyclerView.VERTICAL)
-
-        val myDataSet = arrayList()
+        viewManager = LinearLayoutManager(requireContext())
+        val myDataSet = DataSource.get()
         viewAdapter = RecipeEntryAdapter(myDataSet, onItemClickListener = this)
 
         recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view).apply {
@@ -63,39 +61,6 @@ class RecipesFragment : Fragment(), RecipesEntryContract.View, RecipeEntryAdapte
                 ?.replace(R.id.recipes_root, detailFragment)
                 ?.commit()
 
-    }
-
-    private fun arrayList(): ArrayList<RecipeEntryModel> {
-        val elements = RecipeEntryModel("http://static.food2fork.com/Jalapeno2BPopper2BGrilled2BCheese2BSandwich2B12B500fd186186.jpg",
-                PersonModel("Sandra Bull", "Today at 13:33", R.drawable.avatar_ali_connors), "Ingredients\n" +
-                "2 jalapeno peppers, cut in half lengthwise and seeded\n" +
-                "2 slices sour dough bread\n" +
-                "1 tablespoon butter, room temperature\n" +
-                "2 tablespoons cream cheese, room temperature")
-
-        val element1 = RecipeEntryModel("http://static.food2fork.com/icedcoffee5766.jpg",
-                PersonModel("Audrey Jezz", "Today at 10:33", R.drawable.avatar_jerry_chang), "Ingredients\n" +
-                "2 jalapeno peppers, cut in half lengthwise and seeded\n" +
-                "2 slices sour dough bread\n" +
-                "1 tablespoon butter, room temperature\n" +
-                "2 tablespoons cream cheese, room temperature")
-
-        val element2 = RecipeEntryModel("http://static.food2fork.com/avocadomacandcheesedc99.jpg",
-                PersonModel("Erik Lucatero", "Yesterday at 12:33", R.drawable.avatar_trevor), "Ingredients\n" +
-                "2 jalapeno peppers, cut in half lengthwise and seeded\n" +
-                "2 slices sour dough bread\n" +
-                "1 tablespoon butter, room temperature\n" +
-                "2 tablespoons cream cheese, room temperature")
-
-
-        val element3 = RecipeEntryModel("http://static.food2fork.com/5551711173_dc42f7fc4b_zbd8a.jpg",
-                PersonModel("Erik Lucatero", "Yesterday at 12:33", R.drawable.avatar_sandra), "Ingredients\n" +
-                "2 jalapeno peppers, cut in half lengthwise and seeded\n" +
-                "2 slices sour dough bread\n" +
-                "1 tablespoon butter, room temperature\n" +
-                "2 tablespoons cream cheese, room temperature")
-
-        return arrayListOf(elements, element1, element2, element3)
     }
 
 

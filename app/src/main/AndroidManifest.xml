@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.waliahimanshu.demo.ui"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -12,25 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity
             android:label="@string/home_activity_label"
-            android:name="com.waliahimanshu.demo.ui.home.RecipesActivity"
+            android:name=".home.RecipesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:label="@string/title_item_detail"
+            android:name=".details.RecipesDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".login.WalkthroughActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter android:label="@string/app_name">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:label="@string/title_item_detail"
-            android:name="com.waliahimanshu.demo.ui.details.RecipesDetailActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-
     </application>
+
 </manifest>

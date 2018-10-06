@@ -4,7 +4,7 @@ import javax.inject.Inject
 
 
 class RecipesEntryPresenter @Inject constructor(private val mainView: RecipesEntryContract.View,
-                                                mapper: RecpieEntryMapper) : RecipesEntryContract.Presenter {
+                                                mapper: RecipeEntryMapper) : RecipesEntryContract.Presenter {
     override fun loadData() {
 
     }

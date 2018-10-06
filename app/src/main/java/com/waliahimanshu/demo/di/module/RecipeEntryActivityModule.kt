@@ -4,7 +4,7 @@ import com.waliahimanshu.demo.di.scopes.PerActivity
 import com.waliahimanshu.demo.ui.home.RecipesEntryContract
 import com.waliahimanshu.demo.ui.home.RecipesEntryPresenter
 import com.waliahimanshu.demo.ui.home.RecipesFragment
-import com.waliahimanshu.demo.ui.home.RecpieEntryMapper
+import com.waliahimanshu.demo.ui.home.RecipeEntryMapper
 import dagger.Module
 import dagger.Provides
 
@@ -25,6 +25,6 @@ class RecipeEntryActivityModule {
     @PerActivity
     @Provides
     internal fun provideExpressEntryPresenter(mainView: RecipesEntryContract.View): RecipesEntryContract.Presenter {
-        return RecipesEntryPresenter(mainView, RecpieEntryMapper())
+        return RecipesEntryPresenter(mainView, RecipeEntryMapper())
     }
 }

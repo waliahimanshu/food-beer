@@ -4,4 +4,7 @@
     <string name="home_activity_label">Food</string>
     <string name="title_item_detail">\"??\"</string>
     <string name="photo_by_philipe_cavalcante_on_unsplash">Photo by Philipe Cavalcante on Unsplash</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="start">START</string>
+    <string name="health">Health</string>
 </resources>

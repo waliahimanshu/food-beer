@@ -337,4 +337,6 @@
     <color name="blue_gray_A750">#1f2d3b</color>
     <color name="blue_gray_A700">#1F3143</color>
     <color name="blue_gray_A600">#294159</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

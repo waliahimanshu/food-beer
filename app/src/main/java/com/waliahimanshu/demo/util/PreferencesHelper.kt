@@ -11,7 +11,6 @@ class PreferencesHelper @Inject constructor(context: Context) {
 
     companion object {
         private const val PREF_DEMO_PACKAGE_NAME = "com.waliahimanshu.demo.preferences"
-
     }
 
     private val globalAppPref: SharedPreferences
@@ -19,7 +18,4 @@ class PreferencesHelper @Inject constructor(context: Context) {
     init {
         globalAppPref = context.getSharedPreferences(PREF_DEMO_PACKAGE_NAME, Context.MODE_PRIVATE)
     }
-
-
-
 }

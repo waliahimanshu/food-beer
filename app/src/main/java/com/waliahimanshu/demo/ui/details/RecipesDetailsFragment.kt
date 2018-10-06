@@ -46,17 +46,12 @@ class RecipesDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        fab {
-//            Snackbar.make(it, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
-
         val model = arguments?.getParcelable<RecipeEntryModel>(EXTRA_RECIPE_ITEM)
 
         val imageView = view.findViewById<ImageView>(R.id.image_header)
         val textView = view.findViewById<TextView>(R.id.item_detail_text)
 
-        textView.text = model!!.recipeShortDescription
+        textView.text = model?.recipeShortDescription
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val imageTransitionName = arguments?.getString(EXTRA_RECIPE_IMAGE_TRANSITION_NAME)
@@ -64,7 +59,7 @@ class RecipesDetailsFragment : Fragment() {
         }
 
         Picasso.get()
-                .load(model.recipeImageUrl)
+                .load(model?.recipeImageUrl)
                 .noFade()
                 .into(imageView, object : Callback {
                     override fun onSuccess() {

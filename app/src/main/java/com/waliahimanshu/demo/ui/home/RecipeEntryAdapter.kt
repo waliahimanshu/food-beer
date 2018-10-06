@@ -30,11 +30,8 @@ class RecipeEntryAdapter(private val dataSet: ArrayList<RecipeEntryModel>,
                 .load(recipeEntryModel.recipeImageUrl)
                 .into(itemViewHolder.recipeImage, object : Callback {
                     override fun onSuccess() {
-
                     }
-
                     override fun onError(exception: Exception) {
-
                     }
                 })
 

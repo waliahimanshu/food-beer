@@ -7,5 +7,5 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    tools:context=".home.RecipesEntryActivity"
+    tools:context=".home.RecipesActivity"
     tools:listitem="@layout/recipe_item_list" />

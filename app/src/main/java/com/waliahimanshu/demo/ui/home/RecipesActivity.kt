@@ -1,0 +1,19 @@
+package com.waliahimanshu.demo.ui.home
+
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.waliahimanshu.demo.ui.R
+
+class RecipesActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
+
+        setContentView(R.layout.activity_recpies)
+
+        if (savedInstanceState != null) {
+            return
+        }
+
+        supportFragmentManager.beginTransaction().add(R.id.recipes_root, RecipesFragment.newInstance()).commit()
+    }
+}

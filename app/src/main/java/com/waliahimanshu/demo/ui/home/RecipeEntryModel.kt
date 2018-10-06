@@ -1,4 +1,8 @@
 package com.waliahimanshu.demo.ui.home
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class RecipeEntryModel(var image: String, var title: String, var description: String)
+
+@Parcelize
+data class RecipeEntryModel(var recipeImageUrl: String, var personModel: PersonModel, var recipeShortDescription: String) : Parcelable

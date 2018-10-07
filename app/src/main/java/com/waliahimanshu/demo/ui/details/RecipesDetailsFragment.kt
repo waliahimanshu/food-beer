@@ -14,13 +14,13 @@ import com.squareup.picasso.Picasso
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_IMAGE_TRANSITION_NAME
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_ITEM
-import com.waliahimanshu.demo.ui.home.RecipeEntryModel
+import com.waliahimanshu.demo.ui.home.RecipeModel
 
 
 class RecipesDetailsFragment : Fragment() {
 
     companion object {
-        fun newInstance(itemModel: RecipeEntryModel, transitionName: String): RecipesDetailsFragment {
+        fun newInstance(itemModel: RecipeModel, transitionName: String): RecipesDetailsFragment {
             val bundle = Bundle()
             bundle.putParcelable(EXTRA_RECIPE_ITEM, itemModel)
             bundle.putString(EXTRA_RECIPE_IMAGE_TRANSITION_NAME, transitionName)
@@ -46,7 +46,7 @@ class RecipesDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val model = arguments?.getParcelable<RecipeEntryModel>(EXTRA_RECIPE_ITEM)
+        val model = arguments?.getParcelable<RecipeModel>(EXTRA_RECIPE_ITEM)
 
         val imageView = view.findViewById<ImageView>(R.id.image_header)
         val textView = view.findViewById<TextView>(R.id.item_detail_text)

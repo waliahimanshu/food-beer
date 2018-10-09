@@ -4,7 +4,12 @@
     <string name="home_activity_label">Food</string>
     <string name="title_item_detail">\"??\"</string>
     <string name="photo_by_philipe_cavalcante_on_unsplash">Photo by Philipe Cavalcante on Unsplash</string>
-    <string name="sign_up">SIGN UP</string>
-    <string name="start">START</string>
+    <string name="button_sign_up">SIGN UP</string>
+    <string name="button_start">START</string>
     <string name="health">Health</string>
+    <string name="welcome_to_the_app">Welcome to the app</string>
+    <string name="title_1">Inspire</string>
+    <string name="title_1_desc">By Making every day cooking fun</string>
+    <string name="title_2">Build</string>
+    <string name="title_2_desc">Be the part of one global community</string>
 </resources>

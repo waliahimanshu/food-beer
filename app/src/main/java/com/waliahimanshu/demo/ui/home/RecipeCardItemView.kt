@@ -8,22 +8,57 @@ import com.waliahimanshu.demo.util.picasoo.IBitmapHolder
 
 class RecipeCardItemView(private val view: View) : RecipeCardItemContract.View {
 
+    private val recipeImage = view.findViewById<ImageView>(profile_recipe_image)
+    private val recipeIngredient = view.findViewById<TextView>(recipe_ingredients)
+    private var profileTitle = view.findViewById<TextView>(profile_tile)
+    private var profileDate = view.findViewById<TextView>(profile_date)
+
+    private lateinit var presenter: RecipeCardItemContract.Presenter
+
+
+    //TODO remove if not needed
+    private lateinit var model: Recipes
+
+    init {
+        recipeImage.setOnClickListener {
+            presenter.onClick(model, recipeImage)
+        }
+    }
+
+    override fun setModel(model: Recipes) {
+        this.model = model
+    }
+
+    override fun setPresenter(recipeCardItemPresenter: RecipeCardItemContract.Presenter) {
+        this.presenter = recipeCardItemPresenter
+    }
+
     override fun setProfileAvatar(bitmapHolder: IBitmapHolder) =
             view.findViewById<ImageView>(profile_avatar).setImageBitmap(bitmapHolder.bitmap)
 
-    override fun setRecipeImageUrl(bitmapHolder: IBitmapHolder) =
-            view.findViewById<ImageView>(profile_recipe_image).setImageBitmap(bitmapHolder.bitmap)
+    override fun setRecipeImageUrl(bitmapHolder: IBitmapHolder) {
+        recipeImage.setImageBitmap(bitmapHolder.bitmap)
+    }
 
     override fun setRecipeShortDesc(string: String) {
-        view.findViewById<TextView>(recipe_short_discription).text = string
+        recipeIngredient.text = string
     }
 
     override fun setProfileName(name: String) {
-        view.findViewById<TextView>(profile_tile).text = name
+        profileTitle.text = name
     }
 
     override fun setProfileDate(date: String) {
-        view.findViewById<TextView>(profile_subtitle_text).text = date
+        profileDate.text = date
     }
+
+    override fun exposeRecipeImage(): ImageView {
+        return recipeImage
+    }
+
+    override fun exposeProfileImage(): ImageView {
+        return view.findViewById(profile_avatar)
+    }
+
 }
 

@@ -15,13 +15,12 @@ class RecipesActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
-
         setContentView(R.layout.activity_recpies)
 
         if (savedInstanceState != null) {
             return
         }
-
         supportFragmentManager.beginTransaction().add(R.id.recipes_root, RecipesFragment.newInstance()).commit()
     }
+
 }

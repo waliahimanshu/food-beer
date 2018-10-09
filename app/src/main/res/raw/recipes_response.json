@@ -1,0 +1,108 @@
+[
+  {
+    "publisher": "The Pioneer Woman",
+    "f2f_url": "http://food2fork.com/view/47024",
+    "ingredients": [
+      "1 pound Ground Coffee (good, Rich Roast)",
+      "8 quarts Cold Water",
+      "Half-and-half (healthy Splash Per Serving)",
+      "Sweetened Condensed Milk (2-3 Tablespoons Per Serving)",
+      "Note: Can Use Skim Milk, 2% Milk, Whole Milk, Sugar, Artificial Sweeteners, Syrups...adapt To Your Liking!"
+    ],
+    "source_url": "http://thepioneerwoman.com/cooking/2011/06/perfect-iced-coffee/",
+    "recipe_id": "47024",
+    "image_url": "http://static.food2fork.com/icedcoffee5766.jpg",
+    "social_rank": 100,
+    "publisher_url": "http://thepioneerwoman.com",
+    "title": "Perfect Iced Coffee"
+  },
+  {
+    "publisher": "Two Peas and Their Pod",
+    "f2f_url": "http://food2fork.com/view/54384",
+    "ingredients": [
+      "10 ounces dry elbow macaroni",
+      "2 cloves garlic, minced",
+      "2 avocados, peeled and pitted",
+      "2 tablespoons fresh lime juice",
+      "1/3 cup chopped fresh cilantro",
+      "Salt and pepper, to taste",
+      "2 tablespoons butter",
+      "2 tablespoons all-purpose flour",
+      "1 cup milk",
+      "2 cups shredded Pepper Jack cheese",
+      "Salt and pepper, to taste",
+      "Fresh avocado chunks, for garnish, if desired"
+    ],
+    "source_url": "http://www.twopeasandtheirpod.com/stovetop-avocado-mac-and-cheese/",
+    "recipe_id": "54384",
+    "image_url": "http://static.food2fork.com/avocadomacandcheesedc99.jpg",
+    "social_rank": 100,
+    "publisher_url": "http://www.twopeasandtheirpod.com",
+    "title": "Stovetop Avocado Mac and Cheese"
+  },
+
+  {
+    "publisher": "My Baking Addiction",
+    "f2f_url": "http://food2fork.com/view/035865",
+    "ingredients": [
+      "2 cups sugar",
+      "1 3/4 cups all-purpose flour",
+      "3/4 cup unsweetened cocoa powder",
+      "2 tablespoons King Arthur Flour Black Cocoa, optional",
+      "2 teaspoons baking soda",
+      "1 teaspoon baking powder",
+      "1 teaspoon kosher salt",
+      "2 eggs",
+      "1 cup buttermilk",
+      "1 cup strong black coffee (I used Green Mountain Coffees Vermont Country Blend)",
+      "1/2 cup vegetable oil"
+    ],
+    "source_url": "http://www.mybakingaddiction.com/the-best-chocolate-cake-recipe/",
+    "recipe_id": "035865",
+    "image_url": "http://static.food2fork.com/BlackMagicCakeSlice1of18c68.jpg",
+    "social_rank": 100,
+    "publisher_url": "http://www.mybakingaddiction.com",
+    "title": "The Best Chocolate Cake"
+  },
+
+  {
+    "publisher": "The Pioneer Woman",
+    "f2f_url": "http://food2fork.com/view/47042",
+    "ingredients": [
+      "1 whole Large Onion",
+      "1 whole Pork Shoulder (\"pork Butt\") - 5 To 7 Pounds",
+      "Salt And Freshly Ground Black Pepper",
+      "1 can (11 Ounce) Chipotle Peppers In Adobo Sauce",
+      "2 cans Dr. Pepper",
+      "2 Tablespoons Brown Sugar"
+    ],
+    "source_url": "http://thepioneerwoman.com/cooking/2011/03/spicy-dr-pepper-shredded-pork/",
+    "recipe_id": "47042",
+    "image_url": "http://static.food2fork.com/5551711173_dc42f7fc4b_zbd8a.jpg",
+    "social_rank": 100,
+    "publisher_url": "http://thepioneerwoman.com",
+    "title": "Spicy Dr. Pepper Shredded Pork"
+  },
+  {
+    "publisher": "Chow",
+    "f2f_url": "http://food2fork.com/view/213f4f",
+    "ingredients": [
+      "2 cups powdered sugar",
+      "1 cup almond flour or almond meal",
+      "3 tablespoons natural unsweetened cocoa powder",
+      "1/4 teaspoon fine salt",
+      "3 large egg whites , at room temperature",
+      "Pinch cream of tartar",
+      "3 tablespoons granulated sugar",
+      "4 ounces bittersweet chocolate , finely chopped",
+      "1/2 cup heavy cream",
+      "2 tablespoons unsalted butter (1/4 stick), at room temperature and cut into cubes"
+    ],
+    "source_url": "http://www.chow.com/recipes/28339-french-chocolate-macarons-with-chocolate-ganache",
+    "recipe_id": "213f4f",
+    "image_url": "http://static.food2fork.com/28339_macarons_600b9d8.jpg",
+    "social_rank": 99.99999968130923,
+    "publisher_url": "http://www.chow.com",
+    "title": "French Chocolate Macarons with Chocolate Ganache Recipe"
+  }
+]

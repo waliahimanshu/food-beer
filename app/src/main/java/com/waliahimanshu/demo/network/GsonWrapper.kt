@@ -14,11 +14,9 @@ class GsonWrapper @Inject constructor(private val gson: Gson) {
 
     fun <T> fromJson(reader: Reader, classOfT: Class<T>): T? {
         try {
-
             return gson.fromJson(reader, classOfT)
         } catch (ex: MalformedJsonException) {
-
+            throw IllegalArgumentException("Invalid json file", ex)
         }
-        return null
     }
 }

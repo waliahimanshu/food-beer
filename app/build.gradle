@@ -38,6 +38,9 @@ dependencies {
     api "org.parceler:parceler-api:${parceler_version}"
     api "com.flextrade.jfixture:jfixture:${jfixture_version}"
 
+    implementation "io.reactivex.rxjava2:rxjava:${rxjava_version}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rxandroid_version}"
+
     implementation "com.squareup.picasso:picasso:${picasso_version}"
 
     implementation "com.android.support:cardview-v7:${support_version}"

@@ -6,4 +6,4 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-data class RecipeModel(var recipeImageUrl: String, var personModel: PersonModel, var recipeShortDescription: String) : Parcelable
+data class Recipes(var recipeImageUrl: String, var personModel: PersonModel, var recipeIngredients: String) : Parcelable

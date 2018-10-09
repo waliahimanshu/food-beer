@@ -5,7 +5,10 @@ import com.waliahimanshu.demo.util.picasoo.IBitmapHolder
 
 interface RecipeCardItemContract {
     interface Presenter{
-        fun bindData(model: RecipeModel)
+        fun bindData(model: Recipes)
+        fun onClick(model: Recipes, recipeImage: ImageView)
+        fun init()
+        fun setInteraction(fragmentInteraction: RecipesFragmentContract.Interaction)
     }
     interface View {
         fun setProfileAvatar(bitmapHolder: IBitmapHolder)
@@ -13,9 +16,9 @@ interface RecipeCardItemContract {
         fun setRecipeShortDesc(string: String)
         fun setProfileName(name: String)
         fun setProfileDate(date: String)
-    }
-
-    interface Interaction {
-        fun onItemClick(item: RecipeModel, view: ImageView)
+        fun exposeRecipeImage(): ImageView?
+        fun setPresenter(recipeCardItemPresenter: RecipeCardItemContract.Presenter)
+        fun exposeProfileImage(): ImageView?
+        fun setModel(model: Recipes)
     }
 }

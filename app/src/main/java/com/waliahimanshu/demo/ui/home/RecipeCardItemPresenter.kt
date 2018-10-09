@@ -1,44 +1,49 @@
 package com.waliahimanshu.demo.ui.home
 
-import android.util.Log
-import com.waliahimanshu.demo.util.picasoo.IBitmapHolder
-import com.waliahimanshu.demo.util.picasoo.PicassoBitmapTarget
+import android.widget.ImageView
+import com.squareup.picasso.Picasso
 import com.waliahimanshu.demo.util.picasoo.PicassoImageLoader
+import io.reactivex.functions.BiConsumer
 
-class RecipeCardItemPresenter(private val itemView: RecipeCardItemView,
+class RecipeCardItemPresenter(private val itemView: RecipeCardItemContract.View,
                               private val imageLoader: PicassoImageLoader) : RecipeCardItemContract.Presenter {
 
 
+    private lateinit var action: BiConsumer<Recipes, ImageView>
+    private lateinit var interaction: RecipesFragmentContract.Interaction
 
-    override fun bindData(model: RecipeModel) {
-        imageLoader.load(model.recipeImageUrl, recipeImageTarget)
-        imageLoader.load(model.personModel.profileImageRes, profileImageTarget)
+    override fun init() {
+        itemView.setPresenter(this)
+    }
+
+    fun setAction(action: BiConsumer<Recipes, ImageView>) {
+        this.action = action
+    }
+
+    override fun setInteraction(fragmentInteraction: RecipesFragmentContract.Interaction) {
+        this.interaction  = fragmentInteraction
+    }
+
+    override fun onClick(model: Recipes, recipeImage: ImageView) {
+       interaction.onItemClick()
+        action.accept(model, recipeImage)
+    }
+
+
+    override fun bindData(model: Recipes) {
+//        imageLoader.load(model.recipeImageUrl, imageRequest.imageRecipe)
+//        imageLoader.load(model.personModel.profileImageRes, imageRequest.imageProfile)
+//
+        val get = Picasso.get()
+        get.setIndicatorsEnabled(true)
+        get.load(model.recipeImageUrl).into(itemView.exposeRecipeImage())
+        get.load(model.personModel.profileImageRes).into(itemView.exposeProfileImage())
 
         with(model) {
+            itemView.setModel(model)
             itemView.setProfileName(personModel.name)
             itemView.setProfileDate(personModel.date)
-            itemView.setRecipeShortDesc(recipeShortDescription)
-
-        }
-    }
-
-    private val recipeImageTarget = object : PicassoBitmapTarget() {
-        override fun onSuccess(model: IBitmapHolder) {
-            itemView.setRecipeImageUrl(model)
-        }
-
-        override fun onError(error: Throwable) {
-            Log.e("RecipeCardItemPresenter", "error", error)
-        }
-    }
-
-    private val profileImageTarget = object : PicassoBitmapTarget() {
-        override fun onSuccess(model: IBitmapHolder) {
-            itemView.setProfileAvatar(model)
-        }
-
-        override fun onError(error: Throwable) {
-            Log.e("RecipeCardItemPresenter", "error", error)
+            itemView.setRecipeShortDesc(recipeIngredients)
         }
     }
 }

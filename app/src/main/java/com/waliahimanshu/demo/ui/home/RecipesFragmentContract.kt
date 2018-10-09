@@ -3,13 +3,16 @@ package com.waliahimanshu.demo.ui.home
 interface RecipesFragmentContract {
 
     interface Presenter {
-        fun onDestroy()
-        fun loadData(response: Int)
+        fun loadData()
+        fun onStop()
     }
 
     interface View {
-        fun showProgressBar(show: Boolean)
-        fun bindData(map: List<RecipeModel>)
-        fun showEmptyState()
+        fun bindData(recipes: List<Recipes>)
+        fun showError()
+    }
+
+    interface Interaction {
+        fun onItemClick()
     }
 }

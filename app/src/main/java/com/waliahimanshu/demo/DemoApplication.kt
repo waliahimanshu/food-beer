@@ -30,9 +30,8 @@ class DemoApplication : Application(), HasActivityInjector, HasSupportFragmentIn
 
 
         if (BuildConfig.DEBUG) {
-
             StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder()
-                    .detectAll()
+                    .detectNetwork()
                     .penaltyLog()
                     .penaltyDeath()
                     .build())

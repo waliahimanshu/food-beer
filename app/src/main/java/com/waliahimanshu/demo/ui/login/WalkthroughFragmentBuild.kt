@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.waliahimanshu.demo.ui.R
 
-class WalkthroughFragment2 : Fragment() {
+class WalkthroughFragmentBuild : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_walkthrough_2, container, false)
+        return inflater.inflate(R.layout.fragment_walkthrough_build, container, false)
     }
 
     companion object {
@@ -24,8 +24,8 @@ class WalkthroughFragment2 : Fragment() {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(sectionNumber: Int): WalkthroughFragment2 {
-            val fragment = WalkthroughFragment2()
+        fun newInstance(sectionNumber: Int): WalkthroughFragmentBuild {
+            val fragment = WalkthroughFragmentBuild()
             val args = Bundle()
             args.putInt(ARG_SECTION_NUMBER, sectionNumber)
             fragment.arguments = args

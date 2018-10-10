@@ -6,14 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.waliahimanshu.demo.ui.R
+import com.waliahimanshu.demo.ui.home.RecipesActivity
+import kotlinx.android.synthetic.main.fragment_walkthrough_entry.*
 
-/**
- * A placeholder fragment containing a simple view.
- */
-class WalkthroughFragment0 : Fragment() {
+class WalkthroughFragmentEntry : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_walkthrough_0, container, false)
+        return inflater.inflate(R.layout.fragment_walkthrough_entry, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        button_start.setOnClickListener {
+            startActivity(RecipesActivity.getLaunchIntent(requireContext()))
+        }
     }
 
     companion object {
@@ -27,8 +34,8 @@ class WalkthroughFragment0 : Fragment() {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(sectionNumber: Int): WalkthroughFragment0 {
-            val fragment = WalkthroughFragment0()
+        fun newInstance(sectionNumber: Int): WalkthroughFragmentEntry {
+            val fragment = WalkthroughFragmentEntry()
             val args = Bundle()
             args.putInt(ARG_SECTION_NUMBER, sectionNumber)
             fragment.arguments = args

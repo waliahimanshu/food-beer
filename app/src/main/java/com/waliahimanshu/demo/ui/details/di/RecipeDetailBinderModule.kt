@@ -26,9 +26,12 @@ class RecipeDetailBinderModule {
     interface Bindings {
 
         @Binds
-        fun provideRecipesDetailView(recipesDetailsView: RecipesDetailsView): RecipesDetailsContract.View
+        fun bindsRecipesDetailView(recipesDetailsView: RecipesDetailsView): RecipesDetailsContract.View
 
         @Binds
-        fun provideRecipesDetailPresenter(recipesDetailsFragmentPresenter: RecipesDetailsFragmentPresenter): RecipesDetailsContract.Presenter
+        fun bindsFragmentInteraction(fragment: RecipesDetailsFragment): RecipesDetailsContract.Interaction
+
+        @Binds
+        fun bindsRecipesDetailPresenter(recipesDetailsFragmentPresenter: RecipesDetailsFragmentPresenter): RecipesDetailsContract.Presenter
     }
 }

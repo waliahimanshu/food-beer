@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#344955</color>
-    <color name="color_primary_dark">#232F34</color>
+    <color name="color_primary">#CAD966</color>
+    <color name="color_primary_dark">#CAD966</color>
     <color name="color_accent">#F8AA34</color>
-    <color name="window_background">#EEF0F2</color>
 
-
-    <color name="appTheme">#CAD966</color>
 
     <!-- Google's material design colours:
  http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->

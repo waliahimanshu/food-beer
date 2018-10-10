@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.waliahimanshu.demo.ui.R
 
-class WalkthroughFragment1 : Fragment() {
+/**
+ * A placeholder fragment containing a simple view.
+ */
+class WalkthroughFragmentInspire : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_walkthrough_1, container, false)
+        return inflater.inflate(R.layout.fragment_walkthrough_inspire, container, false)
     }
 
     companion object {
@@ -24,8 +27,8 @@ class WalkthroughFragment1 : Fragment() {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(sectionNumber: Int): WalkthroughFragment1 {
-            val fragment = WalkthroughFragment1()
+        fun newInstance(sectionNumber: Int): WalkthroughFragmentInspire {
+            val fragment = WalkthroughFragmentInspire()
             val args = Bundle()
             args.putInt(ARG_SECTION_NUMBER, sectionNumber)
             fragment.arguments = args

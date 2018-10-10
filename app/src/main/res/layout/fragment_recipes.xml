@@ -12,13 +12,13 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/appTheme">
+        android:background="@color/color_primary">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:actionBarSize"
-            app:title="FOOD" />
+            app:title="@string/app_bar_title" />
 
     </android.support.design.widget.AppBarLayout>
 

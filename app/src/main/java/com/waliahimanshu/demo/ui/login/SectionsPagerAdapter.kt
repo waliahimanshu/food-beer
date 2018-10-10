@@ -15,9 +15,9 @@ class SectionsPagerAdapter constructor(fm: FragmentManager) : FragmentPagerAdapt
 
     override fun getItem(pos: Int): Fragment {
         return when (pos) {
-            0 -> WalkthroughFragment0.newInstance(0)
-            1 -> WalkthroughFragment1.newInstance(1)
-            else -> WalkthroughFragment2.newInstance(2)
+            0 -> WalkthroughFragmentInspire.newInstance(0)
+            1 -> WalkthroughFragmentBuild.newInstance(1)
+            else -> WalkthroughFragmentEntry.newInstance(2)
         }
     }
 

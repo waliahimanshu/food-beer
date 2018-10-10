@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".login.WalkthroughFragment0">
+    tools:context=".login.WalkthroughFragmentBuild">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="cooking.json"
+        app:lottie_fileName="noodles.json"
         app:lottie_loop="true" />
 
 
@@ -27,16 +27,15 @@
         android:layout_marginStart="32dp"
         android:layout_weight="0"
         style="@style/Head"
-        android:text="@string/title_1"
-        />
+        android:text="@string/title_2" />
 
     <TextView
         android:id="@+id/description_0"
-        style="@style/SubHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:text="@string/title_1_desc" />
+        style="@style/SubHead"
+        android:text="@string/title_2_desc" />
 </LinearLayout>

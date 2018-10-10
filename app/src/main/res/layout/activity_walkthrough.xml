@@ -17,46 +17,6 @@
 
 
     <LinearLayout
-        android:id="@+id/button_container"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="?attr/actionBarSize"
-        android:divider="@drawable/spacer_medium"
-        android:orientation="horizontal"
-        android:showDividers="middle">
-
-        <Button
-            android:id="@+id/button_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_green"
-            android:minHeight="56dp"
-            android:text="@string/button_sign_up"
-            android:textSize="18sp"
-            android:visibility="gone"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/button_start"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:background="@drawable/btn_white"
-            android:minHeight="56dp"
-            android:text="@string/button_start"
-            android:textSize="18sp"
-            tools:ignore="ButtonStyle" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"

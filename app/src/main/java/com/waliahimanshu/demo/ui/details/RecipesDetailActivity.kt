@@ -8,7 +8,7 @@ import com.himanshuw.demo.ui_controls.SharedTransitionFlash
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_IMAGE_TRANSITION_NAME
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_ITEM
-import com.waliahimanshu.demo.ui.home.Recipes
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 
 class RecipesDetailActivity : AppCompatActivity() {
 

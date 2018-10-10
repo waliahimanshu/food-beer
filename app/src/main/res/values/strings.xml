@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">demo-android</string>
-    <string name="no_filters_selected">No filters selected, press the filter button above (<annotation src="@drawable/ic_filter">&#2228;</annotation>)\n<i><annotation foregroundColor="@color/red_300">or swipe from the&#160;right</annotation></i></string>
     <string name="home_activity_label">Food</string>
-    <string name="photo_by_philipe_cavalcante_on_unsplash">Photo by Philipe Cavalcante on Unsplash</string>
     <string name="button_sign_up">SIGN UP</string>
     <string name="button_start">START</string>
     <string name="health">Health</string>
@@ -12,6 +10,6 @@
     <string name="title_2">Build</string>
     <string name="title_2_desc">Be the part of one global community</string>
     <string name="fragment_transition">fragmentTransition</string>
-    <string name="close">colapse button</string>
+    <string name="close">collapse button</string>
     <string name="app_bar_title">FOOD</string>
 </resources>

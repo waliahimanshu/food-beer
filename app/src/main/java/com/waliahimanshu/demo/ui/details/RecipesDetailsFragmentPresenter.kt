@@ -1,8 +1,8 @@
 package com.waliahimanshu.demo.ui.details
 
-import com.waliahimanshu.demo.ui.home.ImageViewWrapper
-import com.waliahimanshu.demo.ui.home.Recipes
-import com.waliahimanshu.demo.util.picasoo.ImageLoader
+import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
+import com.waliahimanshu.demo.ui.home.domain.Recipes
+import com.waliahimanshu.demo.util.picasso.ImageLoader
 import javax.inject.Inject
 
 class RecipesDetailsFragmentPresenter @Inject constructor(private val view: RecipesDetailsContract.View,
@@ -18,10 +18,10 @@ class RecipesDetailsFragmentPresenter @Inject constructor(private val view: Reci
         with(model) {
 
             imageLoader.load(recipeImageUrl,imageViewWrapper.imageRecipe)
-            imageLoader.load(personModel.profileImageRes, imageViewWrapper.imageProfile)
+            imageLoader.load(personDto.profileImageRes, imageViewWrapper.imageProfile)
 
-            view.setProfileName(personModel.name)
-            view.setProfileDate(personModel.date)
+            view.setProfileName(personDto.name)
+            view.setProfileDate(personDto.date)
             view.setRecipeIngredients(recipeIngredients)
         }
     }

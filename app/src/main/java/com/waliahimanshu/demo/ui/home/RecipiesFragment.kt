@@ -13,6 +13,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.details.RecipesDetailActivity
+import com.waliahimanshu.demo.ui.home.cardItem.RecipesAdapter
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 

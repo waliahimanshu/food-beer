@@ -21,7 +21,7 @@
             android:name=".details.RecipesDetailActivity"
             android:theme="@style/FullscreenTheme" />
         <activity
-            android:name=".login.WalkthroughActivity"
+            android:name=".walkthrough.WalkthroughActivity"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

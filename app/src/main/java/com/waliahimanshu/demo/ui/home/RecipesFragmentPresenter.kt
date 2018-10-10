@@ -1,7 +1,8 @@
 package com.waliahimanshu.demo.ui.home
 
-import com.waliahimanshu.demo.network.RecipeRepository
-import com.waliahimanshu.demo.network.UserRepository
+import com.waliahimanshu.demo.data.RecipeRepository
+import com.waliahimanshu.demo.data.UserRepository
+import com.waliahimanshu.demo.ui.home.mapper.RecipeEntryMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

@@ -1,10 +1,10 @@
 package com.waliahimanshu.demo.ui.home.di
 
 import android.view.View
-import com.waliahimanshu.demo.ui.home.RecipeCardItemContract
-import com.waliahimanshu.demo.ui.home.RecipeCardItemPresenter
-import com.waliahimanshu.demo.ui.home.RecipeCardItemView
-import com.waliahimanshu.demo.ui.home.RecipeCardViewHolder
+import com.waliahimanshu.demo.ui.home.cardItem.RecipeCardItemContract
+import com.waliahimanshu.demo.ui.home.cardItem.RecipeCardItemPresenter
+import com.waliahimanshu.demo.ui.home.cardItem.RecipeCardItemView
+import com.waliahimanshu.demo.ui.home.cardItem.RecipeCardViewHolder
 import dagger.Binds
 import dagger.BindsInstance
 import dagger.Module

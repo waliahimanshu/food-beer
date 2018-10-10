@@ -1,6 +1,7 @@
 package com.waliahimanshu.demo.ui.home
 
 import android.widget.ImageView
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 
 interface RecipesFragmentContract {
 

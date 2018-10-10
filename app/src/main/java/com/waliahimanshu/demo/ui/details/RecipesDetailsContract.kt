@@ -1,7 +1,7 @@
 package com.waliahimanshu.demo.ui.details
 
-import com.waliahimanshu.demo.ui.home.ImageViewWrapper
-import com.waliahimanshu.demo.ui.home.Recipes
+import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 
 interface RecipesDetailsContract {
     interface Presenter {

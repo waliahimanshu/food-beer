@@ -1,9 +1,9 @@
 package com.waliahimanshu.demo.ui.home.di
 
 import com.waliahimanshu.demo.di.scopes.PerActivity
-import com.waliahimanshu.demo.network.RecipeRepository
-import com.waliahimanshu.demo.network.UserRepository
-import com.waliahimanshu.demo.ui.home.RecipeEntryMapper
+import com.waliahimanshu.demo.data.RecipeRepository
+import com.waliahimanshu.demo.data.UserRepository
+import com.waliahimanshu.demo.ui.home.mapper.RecipeEntryMapper
 import com.waliahimanshu.demo.ui.home.RecipesFragment
 import com.waliahimanshu.demo.ui.home.RecipesFragmentContract
 import com.waliahimanshu.demo.ui.home.RecipesFragmentPresenter

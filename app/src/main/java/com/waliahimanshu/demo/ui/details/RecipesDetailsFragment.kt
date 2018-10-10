@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_IMAGE_TRANSITION_NAME
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_ITEM
-import com.waliahimanshu.demo.ui.home.ImageViewWrapper
-import com.waliahimanshu.demo.ui.home.Recipes
+import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.recipe_item_detail.*
 import javax.inject.Inject

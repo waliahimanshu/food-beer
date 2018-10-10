@@ -12,4 +12,6 @@
     <string name="title_1_desc">By Making every day cooking fun</string>
     <string name="title_2">Build</string>
     <string name="title_2_desc">Be the part of one global community</string>
+    <string name="fragment_transition">fragmentTransition</string>
+    <string name="close">colapse button</string>
 </resources>

@@ -3,11 +3,13 @@ package com.waliahimanshu.demo.ui.home
 import android.os.Bundle
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.details.RecipesDetailActivity
@@ -33,18 +35,14 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
     @Inject
     lateinit var recipesFragmentPresenter: RecipesFragmentContract.Presenter
 
-    override fun onItemClick(selectedModel: Recipes) {
-        val toBundle = ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
+    override fun onItemClick(selectedModel: Recipes, recipeImage: ImageView) {
+
+        val toBundle = ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity(), recipeImage,
+                ViewCompat.getTransitionName(recipeImage)!!).toBundle()
+
         val launchIntent = RecipesDetailActivity.getLaunchIntent(requireContext(), selectedModel, "")
 
         startActivity(launchIntent, toBundle)
-
-        /* requireActivity().supportFragmentManager
-                 ?.beginTransaction()
-                 ?.addSharedElement(recipeImage, ViewCompat.getTransitionName(recipeImage)!!)
-                 ?.addToBackStack(TAG)
-                 ?.add(R.id.recipes_root,  RecipesDetailsFragment.newInstance(recipeModel, ViewCompat.getTransitionName(recipeImage)!!))
-                 ?.commit()*/
     }
 
     override fun onStart() {
@@ -69,7 +67,6 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
-
     }
 
     override fun showError() {

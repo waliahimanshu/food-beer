@@ -3,15 +3,16 @@ package com.waliahimanshu.demo.util.picasoo
 import android.support.annotation.DrawableRes
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import com.waliahimanshu.demo.ui.R
 import javax.inject.Inject
 
 class PicassoImageLoader @Inject constructor(private val picasso: Picasso) : ImageLoader {
 
     override fun load(url: String, imageView: ImageView) {
-        picasso.load(url).into(imageView)
+        picasso.load(url).noFade().into(imageView)
     }
 
     override fun load(@DrawableRes id: Int, imageView: ImageView) {
-        picasso.load(id).into(imageView)
+        picasso.load(id).noFade().placeholder(R.drawable.avatar).into(imageView)
     }
 }

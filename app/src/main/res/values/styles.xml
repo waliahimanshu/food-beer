@@ -6,9 +6,9 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+
+        <!-- enable window content transitions -->
         <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowExitTransition">@transition/grid_exit</item>
-        <item name="android:windowReenterTransition">@android:transition/slide_top</item>
 
     </style>
 

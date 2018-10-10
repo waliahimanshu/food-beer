@@ -1,5 +1,7 @@
 package com.waliahimanshu.demo.ui.home
 
+import android.widget.ImageView
+
 interface RecipesFragmentContract {
 
     interface Presenter {
@@ -13,6 +15,6 @@ interface RecipesFragmentContract {
     }
 
     interface Interaction {
-        fun onItemClick(model: Recipes)
+        fun onItemClick(selectedModel: Recipes, recipeImage: ImageView)
     }
 }

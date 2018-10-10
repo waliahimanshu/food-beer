@@ -3,6 +3,7 @@ package com.waliahimanshu.demo.ui.details
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_IMAGE_TRANSITION_NAME
@@ -22,6 +23,8 @@ class RecipesDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
         setContentView(R.layout.activity_recpies_details)
+
+        ActivityCompat.startPostponedEnterTransition(this)
 
         val parcelableExtra = intent.getParcelableExtra<Recipes>(EXTRA_RECIPE_ITEM)
 

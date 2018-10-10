@@ -22,5 +22,4 @@ class RecipesActivity : AppCompatActivity() {
         }
         supportFragmentManager.beginTransaction().add(R.id.recipes_root, RecipesFragment.newInstance()).commit()
     }
-
 }

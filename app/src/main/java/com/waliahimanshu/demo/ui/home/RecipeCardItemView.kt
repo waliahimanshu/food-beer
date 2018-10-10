@@ -16,8 +16,6 @@ class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCar
 
     private lateinit var presenter: RecipeCardItemContract.Presenter
 
-
-    //TODO remove if not needed
     private lateinit var model: Recipes
 
     init {
@@ -52,14 +50,5 @@ class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCar
     override fun setProfileDate(date: String) {
         profileDate.text = date
     }
-
-    override fun exposeRecipeImage(): ImageView {
-        return recipeImage
-    }
-
-    override fun exposeProfileImage(): ImageView {
-        return view.findViewById(profile_avatar)
-    }
-
 }
 

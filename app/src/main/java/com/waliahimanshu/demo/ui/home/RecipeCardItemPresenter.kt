@@ -1,7 +1,6 @@
 package com.waliahimanshu.demo.ui.home
 
 import android.widget.ImageView
-import com.squareup.picasso.Picasso
 import com.waliahimanshu.demo.util.picasoo.ImageLoader
 import javax.inject.Inject
 
@@ -15,17 +14,13 @@ class RecipeCardItemPresenter @Inject constructor(private val itemView: RecipeCa
     }
 
     override fun onClick(model: Recipes, recipeImage: ImageView) {
-        interaction.onItemClick(model)
+        interaction.onItemClick(model, recipeImage)
     }
 
-    override fun bindData(model: Recipes) {
-//        imageLoader.load(model.recipeImageUrl, imageRequest.imageRecipe)
-//        imageLoader.load(model.personModel.profileImageRes, imageRequest.imageProfile)
-//
-        val get = Picasso.get()
-        get.setIndicatorsEnabled(true)
-        get.load(model.recipeImageUrl).into(itemView.exposeRecipeImage())
-        get.load(model.personModel.profileImageRes).into(itemView.exposeProfileImage())
+    override fun bindData(model: Recipes, imageViewWrapper: ImageViewWrapper) {
+
+        imageLoader.load(model.recipeImageUrl, imageViewWrapper.imageRecipe)
+        imageLoader.load(model.personModel.profileImageRes, imageViewWrapper.imageProfile)
 
         with(model) {
             itemView.setModel(model)

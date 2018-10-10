@@ -1,10 +1,11 @@
 package com.waliahimanshu.demo.ui.details
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.view.GestureDetectorCompat
 import android.transition.Slide
+import android.transition.TransitionInflater
 import android.view.*
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -17,15 +18,7 @@ import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 
-class RecipesDetailsFragment : Fragment(),   View.OnTouchListener {
-
-
-    private lateinit var detector: GestureDetectorCompat
-
-    override fun onTouch(v: View?, motionEvent: MotionEvent): Boolean {
-        return detector.onTouchEvent(motionEvent)
-
-    }
+class RecipesDetailsFragment : Fragment() {
 
     companion object {
         fun newInstance(itemModel: Recipes, transitionName: String): RecipesDetailsFragment {
@@ -41,42 +34,13 @@ class RecipesDetailsFragment : Fragment(),   View.OnTouchListener {
     @Inject
     lateinit var detailsPresenter: RecipesDetailsContract.Presenter
 
-    override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
 
-        detector = GestureDetectorCompat(context, object : GestureDetector.OnGestureListener {
-            override fun onShowPress(e: MotionEvent?) {
-            }
-
-            override fun onSingleTapUp(e: MotionEvent?): Boolean {
-                return true
-            }
-
-            override fun onDown(e: MotionEvent?): Boolean {
-
-                return true
-            }
-
-            override fun onScroll(e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float): Boolean {
-                return false
-            }
-
-            override fun onLongPress(e: MotionEvent?) {
-            }
-
-            override fun onFling(e1: MotionEvent, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
-
-                if (e2.y > e1.y) {
-                    // direction up
-                    activity?.supportFragmentManager?.popBackStack()
-                } else {
-                    // direction down
-                    activity?.supportFragmentManager?.popBackStack()
-
-                }
-                return true
-
-            }
-        })
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        postponeEnterTransition()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -92,17 +56,42 @@ class RecipesDetailsFragment : Fragment(),   View.OnTouchListener {
         val model = arguments?.getParcelable<Recipes>(EXTRA_RECIPE_ITEM)
         detailsPresenter.bindData(model!!)
 
-        val imageView = view.findViewById<ImageView>(R.id.detail_recipe_image)
-        imageView.setOnTouchListener(this)
 
-        val ingredients = view.findViewById<TextView>(R.id.details_item_ingredients)
+        val imageView: ImageView = view.findViewById(R.id.detail_recipe_image)
+        val navClose: ImageView = view.findViewById(R.id.nav_close_button)
+
+        imageView.setOnTouchListener(object: VerticalSwipeTouchListener(requireContext()) {
+            override fun onSwipeDown() {
+                requireActivity().finishAfterTransition()
+            }
+
+            override fun onSwipeUp() {
+                requireActivity().finishAfterTransition()
+            }
+        })
+
+        navClose.setOnClickListener {
+            requireActivity().finishAfterTransition()
+        }
+
+        val ingredients: TextView = view.findViewById(R.id.details_item_ingredients)
 
         val slide = Slide(Gravity.BOTTOM)
         slide.interpolator = AnimationUtils.loadInterpolator(requireContext(), android.R.interpolator.linear_out_slow_in)
-        slide.duration = 10
         slide.addTarget(ingredients)
-        ingredients.text = model?.recipeIngredients
         enterTransition = slide
 
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            // Respond to the action bar's Up/Home button
+            android.R.id.home -> {
+                activity?.supportFinishAfterTransition()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

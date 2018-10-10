@@ -45,11 +45,12 @@ open class ApplicationModule {
 
     @Provides
     @Singleton
-    internal fun providesPicasso(): Picasso {
-        val picasso = Picasso.get()
-        picasso.setIndicatorsEnabled(true)
-        picasso.isLoggingEnabled = true
-        return picasso
+    internal fun providesPicasso(@ApplicationContext context: Context): Picasso {
+        return Picasso
+                .Builder(context)
+                .indicatorsEnabled(true)
+                .loggingEnabled(true)
+                .build()
     }
 
     @Module

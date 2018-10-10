@@ -8,8 +8,8 @@ class RecipeCardViewHolder @Inject constructor(private val recipeCardItemPresent
                                                rootItemView: View)
     : RecyclerView.ViewHolder(rootItemView) {
 
-    fun bind(recipeModel: Recipes) {
+    fun bind(recipeModel: Recipes, imageViewWrapper: ImageViewWrapper) {
         recipeCardItemPresenter.init()
-        recipeCardItemPresenter.bindData(recipeModel)
+        recipeCardItemPresenter.bindData(recipeModel, imageViewWrapper)
     }
 }

@@ -2,12 +2,14 @@ package com.waliahimanshu.demo.ui.details
 
 import io.reactivex.subjects.PublishSubject
 
-object FavouritePublish   /*: IFavouritePublisher */{
-
+object FavouritePublish : IFavouritePublisher {
     val subject: PublishSubject<Boolean> = PublishSubject.create<Boolean>()
 
+    override fun getStream(): PublishSubject<Boolean> {
+        return subject
+    }
 
-    fun publish(event: Boolean) {
+    override fun publish(event: Boolean) {
         subject.onNext(event)
     }
 

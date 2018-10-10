@@ -4,13 +4,13 @@ import android.app.Application
 import com.waliahimanshu.demo.DemoApplication
 import com.waliahimanshu.demo.di.module.ActivityBuilder
 import com.waliahimanshu.demo.di.module.ApplicationModule
-import com.waliahimanshu.demo.di.scopes.PerApplication
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
-@PerApplication
+@Singleton
 @Component(modules = [
     (ApplicationModule::class),
     (ActivityBuilder::class),

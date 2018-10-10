@@ -8,12 +8,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.details.RecipesDetailActivity
 import dagger.android.support.AndroidSupportInjection
-import io.reactivex.functions.BiConsumer
 import javax.inject.Inject
 
 const val EXTRA_RECIPE_ITEM = "animal_image_url"
@@ -35,24 +33,18 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
     @Inject
     lateinit var recipesFragmentPresenter: RecipesFragmentContract.Presenter
 
-    private var onClickAction: BiConsumer<Recipes, ImageView> = BiConsumer { recipeModel, imageView ->
-
+    override fun onItemClick(selectedModel: Recipes) {
         val toBundle = ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
-        val launchIntent = RecipesDetailActivity.getLaunchIntent(requireContext(), recipeModel, "")
+        val launchIntent = RecipesDetailActivity.getLaunchIntent(requireContext(), selectedModel, "")
 
         startActivity(launchIntent, toBundle)
 
-       /* requireActivity().supportFragmentManager
-                ?.beginTransaction()
-                ?.addSharedElement(recipeImage, ViewCompat.getTransitionName(recipeImage)!!)
-                ?.addToBackStack(TAG)
-                ?.add(R.id.recipes_root,  RecipesDetailsFragment.newInstance(recipeModel, ViewCompat.getTransitionName(recipeImage)!!))
-                ?.commit()*/
-
-    }
-
-    override fun onItemClick() {
-
+        /* requireActivity().supportFragmentManager
+                 ?.beginTransaction()
+                 ?.addSharedElement(recipeImage, ViewCompat.getTransitionName(recipeImage)!!)
+                 ?.addToBackStack(TAG)
+                 ?.add(R.id.recipes_root,  RecipesDetailsFragment.newInstance(recipeModel, ViewCompat.getTransitionName(recipeImage)!!))
+                 ?.commit()*/
     }
 
     override fun onStart() {
@@ -75,7 +67,6 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
         AndroidSupportInjection.inject(this)
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        adapter.setInteraction(this)
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
 
@@ -86,7 +77,6 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
     }
 
     override fun bindData(recipes: List<Recipes>) {
-        adapter.setAction(onClickAction)
         adapter.bindData(recipes)
     }
 }

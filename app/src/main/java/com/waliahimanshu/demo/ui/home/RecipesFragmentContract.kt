@@ -13,6 +13,6 @@ interface RecipesFragmentContract {
     }
 
     interface Interaction {
-        fun onItemClick()
+        fun onItemClick(model: Recipes)
     }
 }

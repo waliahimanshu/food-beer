@@ -2,33 +2,21 @@ package com.waliahimanshu.demo.ui.home
 
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
-import com.waliahimanshu.demo.util.picasoo.PicassoImageLoader
-import io.reactivex.functions.BiConsumer
+import com.waliahimanshu.demo.util.picasoo.ImageLoader
+import javax.inject.Inject
 
-class RecipeCardItemPresenter(private val itemView: RecipeCardItemContract.View,
-                              private val imageLoader: PicassoImageLoader) : RecipeCardItemContract.Presenter {
+class RecipeCardItemPresenter @Inject constructor(private val itemView: RecipeCardItemContract.View,
+                                                  private val imageLoader: ImageLoader,
+                                                  private val interaction: RecipesFragmentContract.Interaction) : RecipeCardItemContract.Presenter {
 
-
-    private lateinit var action: BiConsumer<Recipes, ImageView>
-    private lateinit var interaction: RecipesFragmentContract.Interaction
 
     override fun init() {
         itemView.setPresenter(this)
     }
 
-    fun setAction(action: BiConsumer<Recipes, ImageView>) {
-        this.action = action
-    }
-
-    override fun setInteraction(fragmentInteraction: RecipesFragmentContract.Interaction) {
-        this.interaction  = fragmentInteraction
-    }
-
     override fun onClick(model: Recipes, recipeImage: ImageView) {
-       interaction.onItemClick()
-        action.accept(model, recipeImage)
+        interaction.onItemClick(model)
     }
-
 
     override fun bindData(model: Recipes) {
 //        imageLoader.load(model.recipeImageUrl, imageRequest.imageRecipe)

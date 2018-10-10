@@ -5,8 +5,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.waliahimanshu.demo.ui.R.id.*
 import com.waliahimanshu.demo.util.picasoo.IBitmapHolder
+import javax.inject.Inject
 
-class RecipeCardItemView(private val view: View) : RecipeCardItemContract.View {
+class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCardItemContract.View {
 
     private val recipeImage = view.findViewById<ImageView>(profile_recipe_image)
     private val recipeIngredient = view.findViewById<TextView>(recipe_ingredients)

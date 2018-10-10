@@ -8,29 +8,23 @@ import com.waliahimanshu.demo.di.scopes.ApplicationContext
 import com.waliahimanshu.demo.network.GsonWrapper
 import com.waliahimanshu.demo.network.RawResourceWrapper
 import com.waliahimanshu.demo.network.RecipeRepository
-import com.waliahimanshu.demo.util.PreferencesHelper
+import com.waliahimanshu.demo.ui.details.FavouritePublish
+import com.waliahimanshu.demo.ui.details.IFavouritePublisher
+import com.waliahimanshu.demo.util.picasoo.ImageLoader
+import com.waliahimanshu.demo.util.picasoo.PicassoImageLoader
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
-
+import javax.inject.Singleton
 
 
 /**
- * Module used to provide dependencies at an application-level.
+ * Module used to provide dependencies for application-level.
  */
+
 @Suppress("unused")
 @Module(includes = [ApplicationModule.Bindings::class])
 open class ApplicationModule {
-
-    @Provides
-    internal fun provideContext(@ApplicationContext impl: Application): Context {
-        return impl
-    }
-
-
-    @Provides
-    internal fun providePreferencesHelper(@ApplicationContext context: Context): PreferencesHelper {
-        return PreferencesHelper(context)
-    }
 
     @Provides
     internal fun providesResourceWrapper(@ApplicationContext context: Context): RawResourceWrapper {
@@ -50,7 +44,8 @@ open class ApplicationModule {
 
 
     @Provides
-    internal fun providesPicasso(@ApplicationContext application: Application): Picasso {
+    @Singleton
+    internal fun providesPicasso(): Picasso {
         val picasso = Picasso.get()
         picasso.setIndicatorsEnabled(true)
         picasso.isLoggingEnabled = true
@@ -59,13 +54,18 @@ open class ApplicationModule {
 
     @Module
     interface Bindings {
-//        @Binds
-//        @Singleton
-//        fun providesFavouritePublish(favouritePublish: FavouritePublish): IFavouritePublisher
+        @Binds
+        @Singleton
+        fun providesFavouritePublish(favouritePublish: FavouritePublish): IFavouritePublisher
 
-//        @Binds
-//        @Singleton
-//        fun bindContext(@ApplicationContext impl: Application): Context
+
+        @Binds
+        @Singleton
+        fun bindImageLoader(picassoImageLoader: PicassoImageLoader): ImageLoader
+
+        @Binds
+        @Singleton
+        fun bindContext(@ApplicationContext context: Application): Context
 
     }
 }

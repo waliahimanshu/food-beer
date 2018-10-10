@@ -8,6 +8,7 @@ class RecipesDetailsFragmentPresenter @Inject constructor(private val view: Reci
     init {
         view.setPresenter(this)
     }
+
     override fun bindData(model: Recipes) {
         with(model) {
             view.setRecipeImage(recipeImageUrl)

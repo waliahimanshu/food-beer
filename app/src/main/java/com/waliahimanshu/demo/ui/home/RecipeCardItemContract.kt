@@ -8,7 +8,6 @@ interface RecipeCardItemContract {
         fun bindData(model: Recipes)
         fun onClick(model: Recipes, recipeImage: ImageView)
         fun init()
-        fun setInteraction(fragmentInteraction: RecipesFragmentContract.Interaction)
     }
     interface View {
         fun setProfileAvatar(bitmapHolder: IBitmapHolder)

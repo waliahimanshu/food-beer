@@ -55,7 +55,7 @@
         android:layout_marginBottom="52dp"
         android:background="@drawable/btn_white"
         android:minHeight="56dp"
-        android:text="@string/button_sign_up"
+        android:text="@string/button_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

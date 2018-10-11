@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.waliahimanshu.demo.ui.R
-import com.waliahimanshu.demo.ui.home.domain.Recipes
 import com.waliahimanshu.demo.ui.home.di.RecipeCardViewHolderFactory
+import com.waliahimanshu.demo.ui.home.domain.Recipes
 import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
 import javax.inject.Inject
 
 class RecipesAdapter @Inject constructor(private val viewHolderFactory: RecipeCardViewHolderFactory.Builder) : RecyclerView.Adapter<RecipeCardViewHolder>() {
 
-    var models: List<Recipes> = emptyList()
+    private var models: List<Recipes> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeCardViewHolder {
         val rootView = LayoutInflater.from(parent.context).inflate(R.layout.recipe_item_list, parent, false)

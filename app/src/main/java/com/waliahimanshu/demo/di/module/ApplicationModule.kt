@@ -4,12 +4,14 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
-import com.waliahimanshu.demo.di.scopes.ApplicationContext
 import com.waliahimanshu.demo.data.GsonWrapper
 import com.waliahimanshu.demo.data.RawResourceWrapper
 import com.waliahimanshu.demo.data.RecipeRepository
+import com.waliahimanshu.demo.di.scopes.ApplicationContext
 import com.waliahimanshu.demo.ui.details.FavouritePublish
 import com.waliahimanshu.demo.ui.details.IFavouritePublisher
+import com.waliahimanshu.demo.util.IScheduler
+import com.waliahimanshu.demo.util.Scheduler
 import com.waliahimanshu.demo.util.picasso.ImageLoader
 import com.waliahimanshu.demo.util.picasso.PicassoImageLoader
 import dagger.Binds
@@ -67,6 +69,10 @@ open class ApplicationModule {
         @Binds
         @Singleton
         fun bindContext(@ApplicationContext context: Application): Context
+
+        @Binds
+        @Singleton
+        fun bindScheduler(scheduler: Scheduler): IScheduler
 
     }
 }

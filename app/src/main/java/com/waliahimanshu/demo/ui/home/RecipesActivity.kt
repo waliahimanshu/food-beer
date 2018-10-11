@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.himanshuw.demo.ui_controls.SharedTransitionFlash
+import com.himanshuw.demo.ui_controls.SharedTransitionSystemBars
 import com.waliahimanshu.demo.ui.R
 
 class RecipesActivity : AppCompatActivity() {
@@ -18,7 +18,7 @@ class RecipesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
         setContentView(R.layout.activity_recpies)
 
-        SharedTransitionFlash.fix(window)
+        SharedTransitionSystemBars.exclude(window)
 
         if (savedInstanceState != null) {
             return

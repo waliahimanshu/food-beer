@@ -28,11 +28,9 @@ interface RecipeCardViewHolderFactory {
     interface ViewHolderBindings {
 
         @Binds
-//        @ViewHolderScope
         fun bindRecipeCardItemPresenterContract(presenter: RecipeCardItemPresenter): RecipeCardItemContract.Presenter
 
         @Binds
-//        @ViewHolderScope
         fun bindRecipeCardItemViewContract(view: RecipeCardItemView): RecipeCardItemContract.View
     }
 }

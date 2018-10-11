@@ -19,9 +19,7 @@ import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 
-
-const val EXTRA_RECIPE_ITEM = "animal_image_url"
-const val EXTRA_RECIPE_IMAGE_TRANSITION_NAME = "animal_image_transition_name"
+const val EXTRA_RECIPE_ITEM = "extra_recipe_item"
 
 class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmentContract.Interaction {
 
@@ -30,8 +28,6 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
             return RecipesFragment()
         }
     }
-
-    private lateinit var recyclerView: RecyclerView
 
     @Inject
     lateinit var adapter: RecipesAdapter
@@ -44,7 +40,7 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
         val toBundle = ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity(), recipeImage,
                 ViewCompat.getTransitionName(recipeImage)!!).toBundle()
 
-        val launchIntent = RecipesDetailActivity.getLaunchIntent(requireContext(), selectedModel, "")
+        val launchIntent = RecipesDetailActivity.getLaunchIntent(requireContext(), selectedModel)
 
         startActivity(launchIntent, toBundle)
     }
@@ -67,14 +63,14 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
 
         super.onViewCreated(view, savedInstanceState)
         AndroidSupportInjection.inject(this)
-        recyclerView = view.findViewById(R.id.recycler_view)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.column))
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
     }
 
     override fun showError() {
-        Toast.makeText(context, "Could not load recipes", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(R.string.error_loading_recipies), Toast.LENGTH_LONG).show()
     }
 
     override fun bindData(recipes: List<Recipes>) {

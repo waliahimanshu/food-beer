@@ -12,12 +12,11 @@
         android:layout_height="0dp"
         android:contentDescription="@string/welcome_to_the_app"
         android:scaleType="centerCrop"
-        android:src="@drawable/monika_grabkowska"
+        android:src="@drawable/app_splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView

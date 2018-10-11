@@ -22,9 +22,9 @@ class RecipesAdapter @Inject constructor(private val viewHolderFactory: RecipeCa
 
     override fun onBindViewHolder(recipeCardViewHolder: RecipeCardViewHolder, position: Int) {
         val recipeEntryModel = models[position]
-        val recipe = recipeCardViewHolder.itemView.findViewById<ImageView>(R.id.profile_recipe_image)
-        val profile = recipeCardViewHolder.itemView.findViewById<ImageView>(R.id.profile_avatar)
-        recipeCardViewHolder.bind(recipeEntryModel, ImageViewWrapper(recipe, profile))
+        val recipeImage = recipeCardViewHolder.itemView.findViewById<ImageView>(R.id.profile_recipe_image)
+        val profileImage = recipeCardViewHolder.itemView.findViewById<ImageView>(R.id.profile_avatar)
+        recipeCardViewHolder.bind(recipeEntryModel, ImageViewWrapper(recipeImage, profileImage))
     }
 
     override fun getItemCount(): Int {

@@ -20,10 +20,6 @@ class WalkthroughFragmentBuild : Fragment() {
          */
         private const val ARG_SECTION_NUMBER = "section_number"
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         fun newInstance(sectionNumber: Int): WalkthroughFragmentBuild {
             val fragment = WalkthroughFragmentBuild()
             val args = Bundle()

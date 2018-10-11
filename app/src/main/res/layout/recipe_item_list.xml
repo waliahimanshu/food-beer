@@ -91,7 +91,7 @@
             tools:text="@tools:sample/lorem/random" />
 
         <ImageView
-            android:id="@+id/fav_selected"
+            android:id="@+id/recipe_fav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

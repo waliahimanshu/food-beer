@@ -3,16 +3,19 @@ package com.waliahimanshu.demo.ui.home.cardItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.R.id.*
 import com.waliahimanshu.demo.ui.home.domain.Recipes
+import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
 import javax.inject.Inject
 
-class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCardItemContract.View {
+class RecipeCardItemView @Inject constructor(view: View) : RecipeCardItemContract.View {
 
     private val recipeImage = view.findViewById<ImageView>(profile_recipe_image)
     private val recipeIngredient = view.findViewById<TextView>(recipe_ingredients)
     private var profileTitle = view.findViewById<TextView>(profile_tile)
     private var profileDate = view.findViewById<TextView>(profile_date)
+    private var fav = view.findViewById<ImageView>(recipe_fav)
 
     private lateinit var presenter: RecipeCardItemContract.Presenter
 
@@ -20,7 +23,7 @@ class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCar
 
     init {
         recipeImage.setOnClickListener {
-            presenter.onClick(model, recipeImage)
+            presenter.onClick(model, ImageViewWrapper(recipeImage))
         }
     }
 
@@ -28,11 +31,19 @@ class RecipeCardItemView @Inject constructor(private val view: View) : RecipeCar
         this.model = model
     }
 
+    override fun setFavIcon(boolean: Boolean) {
+        if (boolean) {
+            fav.setImageResource(R.drawable.ic_favorite_red_24dp)
+        } else {
+            fav.setImageResource(R.drawable.ic_favorite_border_grey_24dp)
+        }
+    }
+
     override fun setPresenter(recipeCardItemPresenter: RecipeCardItemContract.Presenter) {
         this.presenter = recipeCardItemPresenter
     }
 
-    override fun setRecipeShortDesc(string: String) {
+    override fun setRecipeIngredients(string: String) {
         recipeIngredient.text = string
     }
 

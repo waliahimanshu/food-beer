@@ -5,6 +5,6 @@ import android.widget.ImageView
 
 interface ImageLoader {
 
-    fun load(@DrawableRes id: Int, imageView: ImageView)
+    fun load(@DrawableRes id: Int, imageView: ImageView?)
     fun load(url: String, imageView: ImageView)
 }

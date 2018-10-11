@@ -12,13 +12,9 @@ class WalkthroughActivity : AppCompatActivity() {
     /**
      * The [ViewPager] that will host the section contents.
      */
-    private var page = 0
 
     private lateinit var viewPager: ViewPager
     private lateinit var indicators: Array<View>
-    private lateinit var colorList: IntArray
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +37,4 @@ class WalkthroughActivity : AppCompatActivity() {
         viewPager.adapter = SectionsPagerAdapter(supportFragmentManager)
         view_pager_indicator.setUpViewPager(viewPager)
     }
-
-
 }

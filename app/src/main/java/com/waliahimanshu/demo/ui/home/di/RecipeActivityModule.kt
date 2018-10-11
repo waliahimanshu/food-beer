@@ -25,8 +25,6 @@ class RecipeActivityModule {
         return recipesFragment
     }
 
-
-
     @Module
     interface Bindings {
 

@@ -10,11 +10,12 @@ import com.waliahimanshu.demo.ui.R
 import javax.inject.Inject
 
 
-
 @SuppressLint("ClickableViewAccessibility")
 class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDetailsContract.View {
 
     private lateinit var recipesDetailsPresenter: RecipesDetailsContract.Presenter
+    private lateinit var recipeId: String
+
 
     private val recipeImage = view.findViewById<ImageView>(R.id.detail_recipe_image)!!
     private val favButton = view.findViewById<ImageView>(R.id.fab_fav_border)
@@ -23,9 +24,11 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     private val recipeIngredient = view.findViewById<TextView>(R.id.details_item_ingredients)
     private val collapseButton: ImageView = view.findViewById(R.id.nav_close_button)
 
+
     init {
         favButton.setOnClickListener {
-            recipesDetailsPresenter.onFavClick()
+            favButton.isSelected = !favButton.isSelected
+            recipesDetailsPresenter.onFavClick(recipeId, favButton.isSelected)
         }
 
         collapseButton.setOnClickListener {
@@ -45,6 +48,15 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
         })
     }
 
+    override fun setFavIcon(selected: Boolean) {
+        favButton.isSelected = selected
+        if (selected) {
+            favButton.setImageResource(R.drawable.ic_favorite_red_24dp)
+        } else {
+            favButton.setImageResource(R.drawable.ic_favorite_border_grey_24dp)
+        }
+    }
+
     override fun setPresenter(presenter: RecipesDetailsContract.Presenter) {
         recipesDetailsPresenter = presenter
     }
@@ -58,11 +70,18 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     }
 
     override fun setRecipeIngredients(recipeIngredients: String) {
-        val bottomUp = AnimationUtils.loadAnimation(view.context,
-                R.anim.slide_up)
+        slideUpFromBottom()
+        recipeIngredient.text = recipeIngredients
+    }
+
+    override fun setRecipeId(recipeId: String) {
+        this.recipeId = recipeId
+    }
+
+    private fun slideUpFromBottom() {
+        val bottomUp = AnimationUtils.loadAnimation(view.context, R.anim.slide_up)
         recipeIngredient.startAnimation(bottomUp)
         recipeIngredient.visibility = View.VISIBLE
-        recipeIngredient.text = recipeIngredients
     }
 }
 

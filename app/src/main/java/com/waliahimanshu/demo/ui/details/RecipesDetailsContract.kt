@@ -5,7 +5,7 @@ import com.waliahimanshu.demo.util.picasso.ImageViewWrapper
 
 interface RecipesDetailsContract {
     interface Presenter {
-        fun bindData(model: Recipes, imageViewWrapper: ImageViewWrapper)
+        fun bindData(model: Recipes, imageViewWrapper: ImageViewWrapper, twoPane: Int)
         fun onFavClick(recipeId: String, selected: Boolean)
         fun onCollapseClick()
     }
@@ -17,6 +17,8 @@ interface RecipesDetailsContract {
         fun setPresenter(presenter: RecipesDetailsContract.Presenter)
         fun setRecipeId(recipeId: String)
         fun setFavIcon(selected: Boolean)
+        fun setRecipeName(title: String)
+        fun setRecipeRank(rank: String)
     }
 
     interface Interaction {

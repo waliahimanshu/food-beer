@@ -25,6 +25,10 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     private val collapseButton: ImageView = view.findViewById(R.id.nav_close_button)
 
 
+    private val recipeTitle: TextView? = view.findViewById(R.id.recipe_title)
+    private val recipeRank: TextView? = view.findViewById(R.id.recipe_rank)
+
+
     init {
         favButton.setOnClickListener {
             favButton.isSelected = !favButton.isSelected
@@ -72,6 +76,15 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     override fun setRecipeIngredients(recipeIngredients: String) {
         slideUpFromBottom()
         recipeIngredient.text = recipeIngredients
+    }
+
+    override fun setRecipeName(title: String) {
+        recipeTitle?.text = title
+    }
+
+    override fun setRecipeRank(rank: String) {
+        recipeRank?.text = rank
+
     }
 
     override fun setRecipeId(recipeId: String) {

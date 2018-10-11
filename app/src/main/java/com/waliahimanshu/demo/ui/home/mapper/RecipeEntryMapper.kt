@@ -13,7 +13,8 @@ class RecipeEntryMapper @Inject constructor() {
         for ((index, it) in allRecipes.withIndex()) {
             val item = profiles[index]
             val personModel = PersonDto(item.name, item.date, item.profileImageRes)
-            arrayList.add(Recipes(it.recipeId, it.imageUrl, personModel, it.ingredients.toString()))
+            val recipeIngredients = it.ingredients.toString().trim('[', ']')
+            arrayList.add(Recipes(it.recipeId, it.imageUrl, personModel, recipeIngredients, it.title, it.socialRank))
         }
         return arrayList
     }

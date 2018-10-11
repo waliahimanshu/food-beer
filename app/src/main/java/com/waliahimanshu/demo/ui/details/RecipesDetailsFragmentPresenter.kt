@@ -16,7 +16,7 @@ class RecipesDetailsFragmentPresenter @Inject constructor(private val view: Reci
         view.setPresenter(this)
     }
 
-    override fun bindData(model: Recipes, imageViewWrapper: ImageViewWrapper) {
+    override fun bindData(model: Recipes, imageViewWrapper: ImageViewWrapper, twoPane: Int) {
         with(model) {
 
             imageLoader.load(recipeImageUrl, imageViewWrapper.imageRecipe)
@@ -27,6 +27,11 @@ class RecipesDetailsFragmentPresenter @Inject constructor(private val view: Reci
             view.setRecipeIngredients(recipeIngredients)
             view.setRecipeId(recipeId)
             view.setFavIcon(preferencesHelper.getValueBy(model.recipeId))
+
+            if(twoPane ==2) {
+                view.setRecipeName(model.title)
+                view.setRecipeRank(model.rank)
+            }
         }
     }
 

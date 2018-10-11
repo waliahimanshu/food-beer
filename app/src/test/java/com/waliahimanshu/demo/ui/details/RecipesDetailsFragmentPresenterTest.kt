@@ -2,6 +2,7 @@ package com.waliahimanshu.demo.ui.details
 
 import com.flextrade.jfixture.FixtureAnnotations
 import com.flextrade.jfixture.annotations.Fixture
+import com.flextrade.jfixture.annotations.Range
 import com.nhaarman.mockitokotlin2.verify
 import com.waliahimanshu.demo.ui.home.domain.Recipes
 import com.waliahimanshu.demo.util.PreferencesHelper
@@ -46,9 +47,13 @@ class RecipesDetailsFragmentPresenterTest {
     }
 
 
+    @Fixture
+    @Range(min = 0, max = 2)
+    var twoPane: Int = 0
+
     @Test
     fun bindImages() {
-        sut.bindData(fixtModel, imageWrapper)
+        sut.bindData(fixtModel, imageWrapper, twoPane)
 
         verify(mockImageLoader).load(fixtModel.recipeImageUrl, imageWrapper.imageRecipe)
         verify(mockImageLoader).load(fixtModel.personDto.profileImageRes, imageWrapper.imageProfile)
@@ -56,7 +61,7 @@ class RecipesDetailsFragmentPresenterTest {
 
     @Test
     fun bindProfileData() {
-        sut.bindData(fixtModel, imageWrapper)
+        sut.bindData(fixtModel, imageWrapper, twoPane)
 
         verify(mockView).setProfileName(fixtModel.personDto.name)
         verify(mockView).setProfileDate(fixtModel.personDto.date)
@@ -64,7 +69,7 @@ class RecipesDetailsFragmentPresenterTest {
 
     @Test
     fun bindRecipeData() {
-        sut.bindData(fixtModel, imageWrapper)
+        sut.bindData(fixtModel, imageWrapper, twoPane)
 
         verify(mockView).setRecipeIngredients(fixtModel.recipeIngredients)
         verify(mockView).setRecipeId(fixtModel.recipeId)

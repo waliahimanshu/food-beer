@@ -11,15 +11,15 @@
     <ImageView
         android:id="@+id/detail_recipe_image"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.5"
-        android:maxHeight="300dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@null"
         android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:maxHeight="300dp"
         android:transitionName="@string/fragment_transition"
-        app:layout_constraintWidth_default="percent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <android.support.design.widget.FloatingActionButton
@@ -77,22 +77,22 @@
         android:id="@+id/details_item_ingredients_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        android:layout_margin="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintStart_toEndOf="@id/detail_recipe_image"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detail_recipe_image"
+        app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/details_item_ingredients"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:fontFamily="@font/worksans_regular"
-        android:textSize="20sp"
-        tools:text="@tools:sample/lorem/random" />
+        <TextView
+            android:id="@+id/details_item_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/worksans_regular"
+            android:textSize="20sp"
+            android:visibility="gone"
+            tools:text="@tools:sample/lorem/random" />
 
     </android.support.v4.widget.NestedScrollView>
 
@@ -110,6 +110,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_keyboard_arrow_down_24dp" />
+
+    <TextView
+        android:id="@+id/recipe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constrainedWidth="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_rank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        tools:src="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/recipe_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/details_item_ingredients_container"
+        app:layout_constraintStart_toEndOf="@+id/recipe_title"
+        app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        tools:src="@tools:sample/lorem/random" />
 
 
 </android.support.constraint.ConstraintLayout>

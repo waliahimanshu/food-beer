@@ -121,6 +121,7 @@
         app:layout_constraintEnd_toStartOf="@+id/recipe_rank"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        tools:ignore ="InconsistentLayout"
         tools:src="@tools:sample/lorem" />
 
     <TextView
@@ -133,6 +134,7 @@
         app:layout_constraintEnd_toStartOf="@+id/details_item_ingredients_container"
         app:layout_constraintStart_toEndOf="@+id/recipe_title"
         app:layout_constraintTop_toBottomOf="@+id/details_profile_date"
+        tools:ignore ="InconsistentLayout"
         tools:src="@tools:sample/lorem/random" />
 
 

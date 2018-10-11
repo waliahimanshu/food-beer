@@ -27,7 +27,6 @@ class RecipesDetailsFragmentPresenterTest {
     @Mock
     lateinit var imageWrapper: ImageViewWrapper
 
-
     @Fixture
     lateinit var fixtModel: Recipes
 

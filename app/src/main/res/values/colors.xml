@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
+
     <color name="color_primary">#CAD966</color>
     <color name="color_primary_dark">#CAD966</color>
     <color name="color_accent">#F8AA34</color>

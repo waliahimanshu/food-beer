@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="Indicator">
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+
+    <style name="Indicator.On" parent="Indicator">
+        <item name="android:background">@drawable/circle_shape_on</item>
+    </style>
+
+    <style name="Indicator.Off" parent="Indicator">
+        <item name="android:background">@drawable/circle_shape_off</item>
+    </style>
+
+</resources>

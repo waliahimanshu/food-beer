@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewCompat
-import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +17,8 @@ import com.waliahimanshu.demo.ui.home.cardItem.RecipesAdapter
 import com.waliahimanshu.demo.ui.home.domain.Recipes
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
+
+
 
 const val EXTRA_RECIPE_ITEM = "animal_image_url"
 const val EXTRA_RECIPE_IMAGE_TRANSITION_NAME = "animal_image_transition_name"
@@ -66,7 +68,7 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
         super.onViewCreated(view, savedInstanceState)
         AndroidSupportInjection.inject(this)
         recyclerView = view.findViewById(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.column))
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
     }

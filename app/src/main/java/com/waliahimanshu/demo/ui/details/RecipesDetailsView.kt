@@ -5,7 +5,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
-import com.himanshuw.demo.ui_controls.VerticalSwipeTouchListener
+import com.himanshuw.demo.controls.VerticalSwipeTouchListener
 import com.waliahimanshu.demo.ui.R
 import javax.inject.Inject
 

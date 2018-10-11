@@ -1,4 +1,4 @@
-package com.himanshuw.demo.ui_controls
+package com.himanshuw.demo.controls
 
 import android.transition.Fade
 import android.view.Window

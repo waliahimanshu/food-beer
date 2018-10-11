@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.himanshuw.demo.ui_controls.SharedTransitionSystemBars
+import com.himanshuw.demo.controls.SharedTransitionSystemBars
 import com.waliahimanshu.demo.ui.R
 
 class RecipesActivity : AppCompatActivity() {

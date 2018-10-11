@@ -1,4 +1,4 @@
-package com.himanshuw.demo.ui_controls
+package com.himanshuw.demo.controls
 
 import android.annotation.SuppressLint
 import android.content.Context

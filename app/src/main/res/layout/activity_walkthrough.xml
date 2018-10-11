@@ -8,12 +8,19 @@
     android:background="@color/white"
     tools:context=".walkthrough.WalkthroughActivity">
 
-
     <android.support.v4.view.ViewPager
         android:id="@+id/sections_view_pager"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.himanshuw.demo.controls.ViewPagerIndicator
+        android:id="@+id/view_pager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
 
 
     <LinearLayout
@@ -21,33 +28,26 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
         android:gravity="center"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:visibility="invisible">
 
-        <ImageView
+        <View
             android:id="@+id/intro_indicator_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/inactive_indicator"
-            android:contentDescription="@null" />
+            style="@style/Indicator.Off"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
 
-
-        <ImageView
+        <View
             android:id="@+id/intro_indicator_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/inactive_indicator"
-            android:contentDescription="@null" />
+            style="@style/Indicator.Off"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
 
-
-        <ImageView
+        <View
             android:id="@+id/intro_indicator_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/inactive_indicator"
-            android:contentDescription="@null" />
+            style="@style/Indicator.Off"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

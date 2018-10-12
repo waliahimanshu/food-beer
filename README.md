@@ -11,7 +11,7 @@ Demo Video land mode [land](../blob/master/device-land.mp4)
 
 
 
-Using hardcode json to load recepies : [recipes_response.json](../blob/master/app/src/main/res/raw/recipes_response.json)
+Using hardcode json to load recipes : [recipes_response.json](../blob/master/app/src/main/res/raw/recipes_response.json)
 and [user](../blob/master/app/src/main/java/com/waliahimanshu/demo/data/UserRepository.kt)
 
 Unit Tests :

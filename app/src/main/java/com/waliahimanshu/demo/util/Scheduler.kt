@@ -7,10 +7,6 @@ import javax.inject.Inject
 
 class Scheduler @Inject constructor() : IScheduler {
 
-    private object InstanceHolder {
-        internal val INSTANCE = com.waliahimanshu.demo.util.Scheduler()
-    }
-
     override fun background(): Scheduler {
         return Schedulers.io()
     }
@@ -19,9 +15,4 @@ class Scheduler @Inject constructor() : IScheduler {
         return AndroidSchedulers.mainThread()
     }
 
-    companion object {
-
-        val instance: com.waliahimanshu.demo.util.Scheduler
-            get() = InstanceHolder.INSTANCE
-    }
 }

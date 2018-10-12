@@ -12,5 +12,5 @@
     <string name="fragment_transition">fragmentTransition</string>
     <string name="close">collapse button</string>
     <string name="app_bar_title">FOOD</string>
-    <string name="error_loading_recipies">Could not load recipes</string>
+    <string name="error_loading_recipes">Could not load recipes</string>
 </resources>

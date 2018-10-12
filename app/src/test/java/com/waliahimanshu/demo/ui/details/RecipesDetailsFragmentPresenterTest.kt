@@ -3,6 +3,7 @@ package com.waliahimanshu.demo.ui.details
 import com.flextrade.jfixture.FixtureAnnotations
 import com.flextrade.jfixture.annotations.Fixture
 import com.flextrade.jfixture.annotations.Range
+import com.nhaarman.mockitokotlin2.never
 import com.nhaarman.mockitokotlin2.verify
 import com.waliahimanshu.demo.ui.home.domain.Recipes
 import com.waliahimanshu.demo.util.PreferencesHelper
@@ -87,5 +88,22 @@ class RecipesDetailsFragmentPresenterTest {
         sut.onCollapseClick()
 
         verify(mockInteraction).onCollapseClick()
+    }
+
+    @Test
+    fun bindLandFields() {
+        sut.bindData(fixtModel, imageWrapper, twoPane = 2)
+
+        verify(mockView).setRecipeName(fixtModel.title)
+        verify(mockView).setRecipeRank(fixtModel.rank)
+    }
+
+
+    @Test
+    fun doNotBindLandFieldsOnPortrait() {
+        sut.bindData(fixtModel, imageWrapper, twoPane = 1)
+
+        verify(mockView, never()).setRecipeName(fixtModel.recipeIngredients)
+        verify(mockView, never()).setRecipeRank(fixtModel.recipeId)
     }
 }

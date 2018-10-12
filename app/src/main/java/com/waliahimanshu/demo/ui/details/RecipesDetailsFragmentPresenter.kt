@@ -28,7 +28,7 @@ class RecipesDetailsFragmentPresenter @Inject constructor(private val view: Reci
             view.setRecipeId(recipeId)
             view.setFavIcon(preferencesHelper.getValueBy(model.recipeId))
 
-            if(twoPane ==2) {
+            if (twoPane == 2) {
                 view.setRecipeName(model.title)
                 view.setRecipeRank(model.rank)
             }

@@ -70,7 +70,7 @@ class RecipesFragment : Fragment(), RecipesFragmentContract.View, RecipesFragmen
     }
 
     override fun showError() {
-        Toast.makeText(context, getString(R.string.error_loading_recipies), Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(R.string.error_loading_recipes), Toast.LENGTH_LONG).show()
     }
 
     override fun bindData(recipes: List<Recipes>) {

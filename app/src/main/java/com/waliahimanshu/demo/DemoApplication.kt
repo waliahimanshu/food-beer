@@ -33,7 +33,6 @@ class DemoApplication : Application(), HasActivityInjector, HasSupportFragmentIn
             StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder()
                     .detectNetwork()
                     .penaltyLog()
-                    .penaltyDeath()
                     .build())
         }
     }

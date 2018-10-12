@@ -27,6 +27,4 @@ class PreferencesHelper @Inject constructor(context: Context) {
     fun remove(key: String) {
         globalAppPref.edit().remove(key).apply()
     }
-
-
 }

@@ -32,9 +32,11 @@ class WalkthroughActivity : AppCompatActivity() {
     }
 
     private fun setUpViewPager() {
-
         viewPager = findViewById(R.id.sections_view_pager)
         viewPager.adapter = SectionsPagerAdapter(supportFragmentManager)
         view_pager_indicator.setUpViewPager(viewPager)
+        viewPager.offscreenPageLimit = 0
+
+
     }
 }

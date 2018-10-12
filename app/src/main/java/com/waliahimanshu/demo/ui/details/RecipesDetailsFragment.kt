@@ -39,8 +39,8 @@ class RecipesDetailsFragment : Fragment(), RecipesDetailsContract.Interaction {
         AndroidSupportInjection.inject(this)
 
         val model = arguments?.getParcelable<Recipes>(EXTRA_RECIPE_ITEM)
-
         val twoPane = resources.getInteger(R.integer.column)
+
         detailsPresenter.bindData(model!!, ImageViewWrapper(detail_recipe_image, details_profile_image), twoPane)
 
     }

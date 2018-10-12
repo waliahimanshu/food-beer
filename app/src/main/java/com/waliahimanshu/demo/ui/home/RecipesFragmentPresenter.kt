@@ -21,7 +21,8 @@ class RecipesFragmentPresenter @Inject constructor(private val mainView: Recipes
                                                    private val scheduler: IScheduler) :
         RecipesFragmentContract.Presenter {
 
-    @VisibleForTesting var compositeDisposable = CompositeDisposable()
+    @VisibleForTesting
+    var compositeDisposable = CompositeDisposable()
 
     override fun loadData() {
         compositeDisposable.add(

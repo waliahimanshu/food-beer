@@ -77,6 +77,5 @@ open class ApplicationModule {
         @Binds
         @Singleton
         fun bindScheduler(scheduler: Scheduler): IScheduler
-
     }
 }

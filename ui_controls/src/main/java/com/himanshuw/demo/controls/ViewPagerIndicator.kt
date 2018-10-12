@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
-import canadia.himanshuw.com.ui_controls.R
+import himanshuw.com.demo.ui_controls.R
 
 class ViewPagerIndicator : LinearLayout, ViewPager.OnPageChangeListener {
 

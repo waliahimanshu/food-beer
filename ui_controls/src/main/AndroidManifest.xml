@@ -1,2 +1,1 @@
-<manifest package="canadia.himanshuw.com.ui_controls"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+<manifest package="himanshuw.com.demo.ui_controls" />

@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.himanshuw.demo.controls.SharedTransitionSystemBars
+import com.himanshuw.demo.controls.AnimationHelper
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.EXTRA_RECIPE_ITEM
 import com.waliahimanshu.demo.ui.home.domain.Recipes
@@ -20,11 +20,12 @@ class RecipesDetailActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) = super.onCreate(savedInstanceState).also {
+
         setContentView(R.layout.activity_recpies_details)
 
         supportPostponeEnterTransition()
 
-        SharedTransitionSystemBars.exclude(window)
+        AnimationHelper.sharedTransitionsExclude(window)
 
         val parcelableExtra = intent.getParcelableExtra<Recipes>(EXTRA_RECIPE_ITEM)
 

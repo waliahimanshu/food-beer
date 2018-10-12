@@ -2,9 +2,9 @@ package com.waliahimanshu.demo.ui.details
 
 import android.annotation.SuppressLint
 import android.view.View
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import com.himanshuw.demo.controls.AnimationHelper
 import com.himanshuw.demo.controls.VerticalSwipeTouchListener
 import com.waliahimanshu.demo.ui.R
 import javax.inject.Inject
@@ -25,6 +25,7 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     private val collapseButton: ImageView = view.findViewById(R.id.nav_close_button)
 
 
+    //extra fields shown in land mode
     private val recipeTitle: TextView? = view.findViewById(R.id.recipe_title)
     private val recipeRank: TextView? = view.findViewById(R.id.recipe_rank)
 
@@ -74,7 +75,7 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
     }
 
     override fun setRecipeIngredients(recipeIngredients: String) {
-        slideUpFromBottom()
+        AnimationHelper.slideUpFromBottom(recipeIngredient)
         recipeIngredient.text = recipeIngredients
     }
 
@@ -89,12 +90,6 @@ class RecipesDetailsView @Inject constructor(private var view: View) : RecipesDe
 
     override fun setRecipeId(recipeId: String) {
         this.recipeId = recipeId
-    }
-
-    private fun slideUpFromBottom() {
-        val bottomUp = AnimationUtils.loadAnimation(view.context, R.anim.slide_up)
-        recipeIngredient.startAnimation(bottomUp)
-        recipeIngredient.visibility = View.VISIBLE
     }
 }
 

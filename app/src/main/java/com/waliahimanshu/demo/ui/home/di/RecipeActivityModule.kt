@@ -34,7 +34,6 @@ class RecipeActivityModule {
 
         @Binds
         fun provideRecipesFragmentPresenter(presenter: RecipesFragmentPresenter): RecipesFragmentContract.Presenter
-
     }
 }
 

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.himanshuw.demo.controls.AnimationHelper
 import com.waliahimanshu.demo.ui.R
 import com.waliahimanshu.demo.ui.home.RecipesActivity
 import kotlinx.android.synthetic.main.fragment_walkthrough_entry.*
@@ -17,6 +18,9 @@ class WalkthroughFragmentEntry : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AnimationHelper.slideUpFromBottom(button_sign_up)
+        AnimationHelper.slideUpFromBottom(button_start)
 
         button_start.setOnClickListener {
             startActivity(RecipesActivity.getLaunchIntent(requireContext()))

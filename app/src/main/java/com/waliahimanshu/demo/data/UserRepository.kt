@@ -15,7 +15,7 @@ class UserRepository @Inject constructor() {
     }
 }
 
-private fun source(): ArrayList<PersonDto> {
+private fun source(): List<PersonDto> {
     val ali = PersonDto("Ali Corner", "Today at 13:33", R.drawable.avatar_ali_connors)
     val trevor = PersonDto("Trever Nand", "Yesterday at 12:33", R.drawable.avatar_trevor)
     val sandra = PersonDto("Sadra Cucatero", "Yesterday at 22:33", R.drawable.avatar_sandra)

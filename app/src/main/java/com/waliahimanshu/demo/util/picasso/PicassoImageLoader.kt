@@ -15,7 +15,6 @@ class PicassoImageLoader @Inject constructor(private val picasso: Picasso) : Ima
     override fun load(@DrawableRes id: Int, imageView: ImageView?) {
         imageView?.let {
             picasso.load(id).fit().noFade().placeholder(R.drawable.avatar).into(imageView)
-
         }
     }
 }

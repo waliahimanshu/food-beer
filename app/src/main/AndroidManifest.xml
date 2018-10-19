@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.waliahimanshu.demo.ui"
+<manifest package="com.waliahimanshu.foodbeer.ui"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -8,20 +8,20 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.waliahimanshu.demo.DemoApplication"
+        android:name="com.waliahimanshu.foodbeer.DemoApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:label="@string/home_activity_label"
-            android:name=".home.RecipesActivity"
+            android:name="com.waliahimanshu.foodbeer.ui.home.RecipesActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".details.RecipesDetailActivity"
+            android:name="com.waliahimanshu.foodbeer.ui.details.RecipesDetailActivity"
             android:theme="@style/FullscreenTheme" />
         <activity
-            android:name=".walkthrough.WalkthroughActivity"
+            android:name="com.waliahimanshu.foodbeer.ui.walkthrough.WalkthroughActivity"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
